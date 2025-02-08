@@ -25,6 +25,7 @@
             text-align: center;
             position: relative;
             z-index: 10;
+            max-width: 90%;
         }
         
         .love-letter {
@@ -56,12 +57,6 @@
             to { opacity: 1; }
         }
         
-        @media (max-width: 768px) {
-            .love-letter {
-                font-size: 1.2em;
-            }
-        }
-        
         .heart {
             position: absolute;
             color: red;
@@ -72,6 +67,26 @@
         @keyframes floatUp {
             from { transform: translateY(0); opacity: 1; }
             to { transform: translateY(-100vh); opacity: 0; }
+        }
+        
+        video {
+            width: 90%;
+            max-width: 853px;
+            height: auto;
+        }
+        
+        @media (max-width: 768px) {
+            .love-letter {
+                font-size: 1.2em;
+                padding: 15px;
+            }
+            .ring-box {
+                width: 80px;
+                height: 80px;
+            }
+            video {
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -86,7 +101,7 @@
             <p style="color:white; line-height:100px; text-align:center;">💍</p>
         </div>
         
-        <video width="620" height="310" controls>
+        <video controls>
             <source src="https://www.dropbox.com/scl/fi/y7ls77o2lbkbqz3jnd9bn/Romantic-Proposal-for-Aliza.mp4?rlkey=h5odm46ubatte4mkcfapdnu9a&st=x83f0wr8&raw=1" type="video/mp4">
             Your browser does not support the video tag.
         </video>
