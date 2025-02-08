@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Forever Promise</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
+        
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ffdde1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            font-family: 'Dancing Script', cursive;
+            position: relative;
+        }
+        
+        .container {
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .love-letter {
+            font-size: 1.5em;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 2s ease-in-out;
+        }
+        
+        .ring-box {
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: relative;
+            margin-top: 20px;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: transform 0.5s ease-in-out;
+        }
+        
+        .ring-box:hover {
+            transform: scale(1.2);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @media (max-width: 768px) {
+            .love-letter {
+                font-size: 1.2em;
+            }
+        }
+        
+        .heart {
+            position: absolute;
+            color: red;
+            font-size: 24px;
+            animation: floatUp 4s linear infinite;
+        }
+        
+        @keyframes floatUp {
+            from { transform: translateY(0); opacity: 1; }
+            to { transform: translateY(-100vh); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Our Forever Promise</h1>
+        <div class="love-letter">
+            <p id="letter"></p>
+        </div>
+        
+        <div class="ring-box" onclick="openRingBox()">
+            <p style="color:white; line-height:100px; text-align:center;">💍</p>
+        </div>
+        
+        <video controls width="300" style="margin-top: 20px;">
+            <source src="C:\Users\Deathportuer\Desktop\Desktop\Romantic Proposal for Aliza.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    
+    <script>
+        function openRingBox() {
+            alert("I love you, Aliza! 💖 Will you be mine forever?");
+        }
+        
+        // Animated Handwritten Love Letter
+        const text = "My love, from the moment we met, I knew we were meant to be. Today, I promise to love you forever. Will you be mine?";
+        let index = 0;
+        function typeWriter() {
+            if (index < text.length) {
+                document.getElementById("letter").innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeWriter, 50);
+            }
+        }
+        typeWriter();
+        
+        // Floating Heart Effect
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.innerHTML = "❤️";
+            heart.classList.add("heart");
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 4000);
+        }
+        setInterval(createHeart, 500);
+    </script>
+</body>
+</html>
